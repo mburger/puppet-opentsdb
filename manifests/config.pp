@@ -12,8 +12,8 @@ class opentsdb::config ( ) {
   
   exec {
     'create_tables':
-      command => 'env COMPRESSION=NONE HBASE_HOME=/opt/hbase-0.94.10-security ./src/create_table.sh',
-      unless  => 'echo "exists \'tsdb\'" | /opt/hbase-0.94.10-security/bin/hbase shell | grep "does exists"'
+      command => 'env COMPRESSION=NONE HBASE_HOME=/opt/hbase /opt/opentsdb/src/create_table.sh',
+      unless  => 'echo "exists \'tsdb\'" | /opt/hbase/bin/hbase shell | grep "does exists"'
   }
   
   
