@@ -12,7 +12,7 @@ class opentsdb::config ( ) {
   
   exec {
     'create_tables':
-      command => 'env COMPRESSION=NONE HBASE_HOME=/opt/hbase /opt/opentsdb/src/create_table.sh',
+      command => 'env COMPRESSION=NONE HBASE_HOME=/opt/hbase /usr/share/opentsdb/bin/create_table.sh',
       unless  => 'echo "exists \'tsdb\'" | /opt/hbase/bin/hbase shell | grep "does exists"'
   }
   
